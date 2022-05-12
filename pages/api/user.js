@@ -1,8 +1,8 @@
 import { withSessionRoute } from "/lib/withSession";
 
-export default withSessionRoute(logoutRoute);
+export default withSessionRoute(user);
 
-async function logoutRoute(req, res, session) {
+async function user(req, res, session) {
   console.log(req.session);
-  res.send({ ok: req.session.user || {} });
+  res.send({ user: req.session.user || null });
 }
